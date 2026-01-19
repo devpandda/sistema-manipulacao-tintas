@@ -44,6 +44,7 @@ class VendaController extends Controller
         // 1. Validation
         $validatedData = $request->validate([
             'id_cliente' => 'required|exists:clientes,id_cliente',
+            'descricao' => 'nullable|string|max:255',
             'data_venda' => 'required|date',
             'status' => 'required|string',
             'observacoes' => 'nullable|string',
@@ -64,6 +65,7 @@ class VendaController extends Controller
             // 2. Create Venda
             $venda = Venda::create([
                 'id_cliente' => $validatedData['id_cliente'],
+                'descricao' => $validatedData['descricao'] ?? null,
                 'data_venda' => $validatedData['data_venda'],
                 'status' => $validatedData['status'],
                 'observacoes' => $validatedData['observacoes'],
