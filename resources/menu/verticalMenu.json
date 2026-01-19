@@ -1,0 +1,61 @@
+{
+  "menu": [
+    {
+      "menuHeader": "Geral"
+    },
+    {
+      "url": "/",
+      "name": "Dashboard",
+      "icon": "menu-icon icon-base ri ri-dashboard-3-line",
+      "slug": "pages-home"
+    },
+    {
+      "menuHeader": "Cadastros"
+    },
+    {
+      "url": "clientes",
+      "name": "Clientes",
+      "icon": "menu-icon icon-base ri ri-user-line",
+      "slug": "clientes.index"
+    },
+    {
+      "url": "produtos",
+      "name": "Produtos",
+      "icon": "menu-icon icon-base ri ri-paint-brush-line",
+      "slug": "produtos.index"
+    },
+    {
+      "url": "maquinas",
+      "name": "Máquinas",
+      "icon": "menu-icon icon-base ri ri-macbook-line",
+      "slug": "maquinas.index"
+    },
+    {
+      "menuHeader": "Vendas & Comercial"
+    },
+    {
+      "url": "vendas",
+      "name": "Vendas",
+      "icon": "menu-icon icon-base ri ri-shopping-cart-line",
+      "slug": "vendas.index"
+    },
+    {
+      "menuHeader": "Relatórios"
+    },
+    {
+      "url": "relatorios/vendas-por-cliente",
+      "name": "Buscar (Clientes)",
+      "icon": "menu-icon icon-base ri ri-search-line",
+      "slug": "relatorios.vendas_por_cliente"
+    },
+    {
+      "menuHeader": "Configurações"
+    },
+    {
+      "url": "users",
+      "name": "Usuários",
+      "icon": "menu-icon icon-base ri ri-user-settings-line",
+      "slug": "users.index"
+    }
+  ]
+}
