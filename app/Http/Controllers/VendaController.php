@@ -178,4 +178,21 @@ class VendaController extends Controller
         $venda->delete();
         return redirect()->route('vendas.index')->with('success', 'Venda cancelada/excluída com sucesso!');
     }
+    /**
+     * Print label for a manipulated item.
+     */
+    public function printLabel($id)
+    {
+        $item = ItemVenda::with(['produto', 'manipulacao'])->findOrFail($id);
+        
+        if (!$item->manipulacao) {
+            abort(404, 'Este item não possui manipulação vinculada.');
+        }
+
+        // Get message from database, fallback to config
+        $config = \App\Models\Configuracao::where('chave', 'msg_etiqueta')->first();
+        $msgPadrao = $config ? $config->valor : config('etiquetas.msg_padrao', 'Obrigado pela preferência!');
+
+        return view('content.vendas.etiqueta', compact('item', 'msgPadrao'));
+    }
 }

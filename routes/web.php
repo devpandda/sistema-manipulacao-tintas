@@ -22,6 +22,7 @@ Route::middleware([
   Route::resource('clientes', \App\Http\Controllers\ClienteController::class);
   Route::resource('produtos', \App\Http\Controllers\ProdutoController::class);
   Route::resource('maquinas', \App\Http\Controllers\MaquinaController::class);
+  Route::get('vendas/item/{id}/etiqueta', [\App\Http\Controllers\VendaController::class, 'printLabel'])->name('vendas.print_label');
   Route::resource('vendas', \App\Http\Controllers\VendaController::class);
   Route::resource('users', \App\Http\Controllers\UserController::class);
   
@@ -31,4 +32,8 @@ Route::middleware([
 
   // Reports
   Route::get('relatorios/vendas-por-cliente', [\App\Http\Controllers\RelatorioController::class, 'vendasPorCliente'])->name('relatorios.vendas_por_cliente');
+
+  // Settings
+  Route::get('settings', [\App\Http\Controllers\ConfiguracaoController::class, 'index'])->name('settings.index');
+  Route::post('settings', [\App\Http\Controllers\ConfiguracaoController::class, 'update'])->name('settings.update');
 });

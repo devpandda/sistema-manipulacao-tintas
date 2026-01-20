@@ -56,6 +56,12 @@
       "name": "Usuários",
       "icon": "menu-icon icon-base ri ri-user-settings-line",
       "slug": "users.index"
+    },
+    {
+      "url": "settings",
+      "name": "Configurações",
+      "icon": "menu-icon icon-base ri ri-settings-3-line",
+      "slug": "settings.index"
     }
   ]
 }

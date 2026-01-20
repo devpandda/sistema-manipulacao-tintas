@@ -116,6 +116,11 @@
                         data-bs-target="#collapseMan{{ $item->id_item_venda }}" aria-expanded="false">
                         Ver Detalhes (Manipulado)
                       </button>
+                      <a href="{{ route('vendas.print_label', $item->id_item_venda) }}" target="_blank"
+                        class="btn btn-sm btn-outline-secondary" title="Imprimir Etiqueta">
+                        Imprimir
+                        <i class="ri-printer-line"></i>
+                      </a>
                     @else
                       <span class="text-muted">-</span>
                     @endif
